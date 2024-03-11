@@ -2,223 +2,144 @@
 Table of Contents
 Introduction to Python in DevOps
 
-Why Python for DevOps?
+# Why Python for DevOps?
 Python's readability, versatility, and extensive libraries make it an ideal choice for automation and scripting tasks in DevOps.
 Key Python Features for DevOps
-Conciseness, readability, strong community support, and vast ecosystem of libraries.
+Conciseness, readability, strong community support, and a vast ecosystem of libraries.
 Setting Up Python Environment
 Guide on installing Python, virtual environments, and package management with pip.
 Basic Python Concepts
 
-Variables and Data Types
+# Variables and Data Types
 Explanation of Python's dynamic typing and common data types.
 Control Structures
 Examples of if statements, loops, and their application in DevOps scripts.
 Functions and Modules
 Creating reusable functions and organizing code into modules.
 Example: Creating a Python module for commonly used functions in DevOps.
-python
-Copy code
-# Example: DevOpsUtils module
-def execute_command(command):
-    # Implementation for executing commands
-    pass
+   
+![Screenshot 2024-03-12 025559](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/f158a590-21ac-4c38-9d0f-5a651b6a3162)
 
-def parse_config_file(file_path):
-    # Implementation for parsing configuration files
-    pass
-Exception Handling
+# Exception Handling
 Handling errors gracefully in DevOps scripts.
 Example: Exception handling in a deployment script.
-python
-Copy code
-try:
-    # Code that might raise an exception
-    deploy_application()
-except Exception as e:
-    print(f"Error during deployment: {str(e)}")
-Working with Version Control Systems
 
-Git Integration with Python
+![image](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/f1480ec4-bcab-461b-bf98-5ddaf282ae53)
+
+# Working with Version Control Systems
+
+# Git Integration with Python
 Exploring the git Python library for interacting with Git repositories.
 Automating Git Operations
 Examples of automating common Git operations using Python scripts.
-python
-Copy code
-# Example: Automating Git Pull
-import subprocess
 
-subprocess.run(["git", "pull"])
-Infrastructure as Code (IaC) with Python
+![image](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/03f29005-645f-48f2-9b25-fa137bb56497)
+
+# Infrastructure as Code (IaC) with Python
 
 Introduction to IaC
 Understanding the concept and benefits of Infrastructure as Code.
 Python Libraries for IaC
 Deep dive into using tools like Terraform, AWS CDK, and Ansible for IaC.
-python
-Copy code
-# Example: Terraform Configuration in Python
-provider "aws" {
-  region = "us-west-2"
-}
 
-resource "aws_instance" "example" {
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = "t2.micro"
-}
-Using AWS CDK to Define Infrastructure
+![image](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/d88ef447-5f52-4b7d-93c1-07cf8be707fd)
+
+# Using AWS CDK to Define Infrastructure
 Example of defining AWS resources using AWS CDK in Python.
-python
-Copy code
-from aws_cdk import (
-    aws_s3 as s3,
-    core,
-)
 
-class MyStack(core.Stack):
-    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
-        super().__init__(scope, id, **kwargs)
+![image](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/1fdfa7e5-0b6e-4f73-8ade-33159e96b6c2)
 
-        s3.Bucket(self, "MyBucket", versioned=True)
-Ansible Automation with Python
+# Ansible Automation with Python
 Utilizing Ansible for configuration management and automation.
 Example: Ansible playbook execution using Python.
-python
-Copy code
-# Example: Ansible Playbook Execution
-import ansible.constants as C
-from ansible.executor.playbook_executor import PlaybookExecutor
 
-playbook_path = 'example_playbook.yml'
+![image](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/732463d4-c47b-443d-8763-bcd917a20fa3)
 
-def run_ansible_playbook(playbook_path):
-    playbook_executor = PlaybookExecutor(
-        playbooks=[playbook_path],
-        inventory=C.DEFAULT_INVENTORY_FILE,
-        variable_manager=C.VariableManager(),
-        loader=C.Loader(),
-        options={'verbosity': 0, 'listhosts': False, 'listtasks': False, 'listtags': False},
-    )
-    playbook_executor.run()
-Configuration Management with Python
+# Configuration Management with Python
 
-Introduction to Configuration Management
+# Introduction to Configuration Management
 Explanation of the role of configuration management in DevOps.
 Ansible Automation with Python (Continued)
 Further exploration of Ansible's capabilities for managing configurations.
-python
-Copy code
-# Example: Ansible Playbook for Configuring Nginx
-- name: Configure Nginx
-  hosts: web_servers
-  tasks:
-    - name: Install Nginx
-      apt:
-        name: nginx
-        state: present
-Containerization and Orchestration
 
-Docker Integration with Python
+![image](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/ed617cc4-daa6-411d-9bd6-8f5a4cf54959)
+
+# Containerization and Orchestration
+
+# Docker Integration with Python
 Leveraging Python for Docker automation and management.
 Kubernetes Automation with Python
 Using Python libraries to interact with Kubernetes clusters.
-python
-Copy code
-# Example: Kubernetes Deployment Script
-from kubernetes import client, config
 
-config.load_kube_config()
-v1 = client.CoreV1Api()
+![image](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/72310852-45dd-44ba-96be-5877b18bdf9b)
 
-pod_manifest = {
-    "apiVersion": "v1",
-    "kind": "Pod",
-    # ... Pod specification details
-}
-
-v1.create_namespaced_pod(body=pod_manifest, namespace="default")
-Docker SDK for Python (Continued)
+# Docker SDK for Python (Continued)
 Further examples of Docker automation using Python.
-python
-Copy code
-# Example: Docker SDK for Python (Continued)
-container = client.containers.run('nginx', detach=True)
-Continuous Integration and Deployment (CI/CD)
 
-Jenkins Integration with Python
+![image](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/3b788f6f-52b0-4016-9024-d19664a837a0)
+
+# Continuous Integration and Deployment (CI/CD)
+
+# Jenkins Integration with Python
 Integrating Jenkins with Python scripts for automation.
 Travis CI Automation (Continued)
 Expanding on Travis CI configuration with Python scripts.
-python
-Copy code
-# Example: Travis CI Deployment Script
-script:
-  - python deploy_script.py
-Monitoring and Logging with Python
 
-Using Python for Logging
+![image](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/f4ef2121-91ca-4bed-8142-15d6702f02cc)
+
+# Monitoring and Logging with Python
+
+# Using Python for Logging
 Implementing logging in Python scripts for better visibility.
 Integrating Monitoring Tools
 Incorporating Prometheus and Grafana for monitoring.
-python
-Copy code
-# Example: Python Logging Configuration
-import logging
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-logger.info('This is an info message')
-Custom Metrics Collection
+![image](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/bc69462d-3cd0-4e4d-94ca-ce1cd504e914)
+
+# Custom Metrics Collection
 Python script examples for collecting custom metrics for monitoring.
-python
-Copy code
-# Example: Custom Metrics Collection for Prometheus
-from prometheus_client import Gauge, start_http_server
-import time
 
-g = Gauge('custom_metric', 'Description of gauge')
+![image](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/76e2dffa-9e8a-4277-a6f4-c8a834bfd0c4)
 
-def collect_custom_metric():
-    # Implementation to collect custom metric
-    pass
+# Security Automation with Python
 
-if __name__ == '__main__':
-    start_http_server(8000)
-    while True:
-        g.set(collect_custom_metric())
-        time.sleep(10)
-Security Automation with Python
-
-Introduction to Security Automation
+# Introduction to Security Automation
 Discussing the importance of security automation in DevOps.
 Automating Security Scans (Continued)
 Expanding on the use of Bandit for security scanning.
-python
-Copy code
-# Example: Using Bandit for Security Scanning
-import subprocess
 
-subprocess.run(["bandit", "-r", "src"])
-Security Compliance Checks
+![image](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/cf6d5eed-3abb-44ee-acb0-c3d8e13f2512)
+
+# Security Compliance Checks
 Python scripts for automating security compliance checks.
-python
-Copy code
-# Example: Security Compliance Checks
-def check_security_compliance():
-    # Implementation for security compliance checks
-    pass
 
-if __name__ == '__main__':
-    check_security_compliance()
-Advanced DevOps Automation with Python
+![image](https://github.com/vamshiyekbote/python-for-devops/assets/86669609/a0d11e92-5e40-42e4-8ff4-ff085b5676de)
 
-Event-Driven Automation
+# Advanced DevOps Automation with Python
+
+# Event-Driven Automation
 Utilizing Python for event-driven automation using tools like AWS Lambda.
 Machine Learning in DevOps
 Exploring the role of Python and machine learning for predictive analytics in DevOps.
 Conclusion
 
-Recap of Python in DevOps
+# Recap of Python in DevOps
 Summarizing the key points of Python's role in DevOps.
 Resources for Further Learning
 Providing links to additional resources for those looking to deepen their understanding of Python in DevOps.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
